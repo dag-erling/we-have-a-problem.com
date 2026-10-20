@@ -172,6 +172,15 @@ update-ca-trust</pre>
 <pre>certctl untrust /usr/share/certs/mozilla/all/emSign_ECC_Root_CA_-_G3.pem &amp;&amp;
 certctl untrust /usr/share/certs/mozilla/all/Comodo_AAA_Services_root.pem</pre>
 
+<h3>Are there workarounds for FreeBSD?</h3>
+
+<p>On FreeBSD 14 or later, run the following commands as root:</p>
+<pre>
+cp /etc/ssl/certs/14bc7599.0 /usr/share/certs/untrusted/14bc7599.pem
+cp /etc/ssl/certs/ee64a828.0 /usr/share/certs/untrusted/ee64a828.pem
+certctl rehash
+</pre>
+
 <h2>What actions can trust store operators take?</h2>
 
 <p>Please see <a href="https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE">this thread</a> in Mozilla's dev-security-policy forum.</p>
